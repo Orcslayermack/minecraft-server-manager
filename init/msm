@@ -143,7 +143,7 @@ echo_if() {
 	[ ! -z "$1" ] && echo "$1"
 }
 
-# Exit's the script 
+# Exits the script 
 error_exit() {
 	case "$1" in
 		INVALID_USER) code=64;;
@@ -179,7 +179,7 @@ is_bash_version() {
 # RETURN: The name in uppercase and with underscores
 to_global_name() {
 	unset RETURN
-	# Translate to uppercase, and replace dashes with underscores
+	# Translate to uppercase and replace dashes with underscores
 	local result="$1"
 	if is_bash_version 4; then
 		# Much faster than the `tr` command
@@ -224,7 +224,7 @@ quick_basename() {
 }
 
 # A function used to print debug messages to stdout. Prevents messages from
-# appearing unless in debug mode, and allows debug statements to be easily
+# appearing unless in debug mode and allows debug statements to be easily
 # distinguished from necessary echo statements.
 # $1: The message to output
 debug() {
